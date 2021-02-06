@@ -1,30 +1,39 @@
+console.log("Inicio");
+
 var checkboxes = [];
-var suma;
-index = 0
+var etiquetas = [];
+
+index = 0;
 var seleccion = document.body.getElementsByClassName('test')[index];
+var estilo = document.body.getElementsByClassName('tarea')[index];
 
 while( seleccion != undefined)
 {
     seleccion = document.body.getElementsByClassName('test')[index];
+    estilo = document.body.getElementsByClassName('tarea')[index];
+
+    etiquetas.push(estilo)
     checkboxes.push(seleccion);
+
     index++;   
+
+    seleccion = document.body.getElementsByClassName('test')[index];
+    estilo = document.body.getElementsByClassName('tarea')[index];
 }
 
-function eliminar()
+for(var two = 0; two < etiquetas.length; two++)
 {
-    if(this.checked)
-    {
-        alert('Check seleccionado')
-    }
-    document.body.label.style = "text-decoration: line-through;";
-}
-
-console.log("Antes de funcion");
-seleccion = null;
-
-for(var two = 0; two < checkboxes.length - 1; two++)
-{
-    checkboxes[two].addEventListener("change", eliminar)    
+    etiquetas[two].addEventListener('click', function() 
+        {            
+            if( this.style.textDecoration === 'none')
+            {
+                this.style = 'text-decoration: line-through';
+            }
+            else
+            {
+                this.style = 'text-decoration: none';
+            }
+        } );
 }
 
 console.log("FIN");
