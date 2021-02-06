@@ -1,23 +1,18 @@
 console.log("Inicio");
 
-var checkboxes = [];
 var etiquetas = [];
 
 index = 0;
-var seleccion = document.body.getElementsByClassName('test')[index];
 var estilo = document.body.getElementsByClassName('tarea')[index];
 
-while( seleccion != undefined)
+while( estilo != undefined)
 {
-    seleccion = document.body.getElementsByClassName('test')[index];
     estilo = document.body.getElementsByClassName('tarea')[index];
 
     etiquetas.push(estilo)
-    checkboxes.push(seleccion);
 
     index++;   
 
-    seleccion = document.body.getElementsByClassName('test')[index];
     estilo = document.body.getElementsByClassName('tarea')[index];
 }
 
