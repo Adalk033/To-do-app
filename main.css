@@ -1,0 +1,99 @@
+body{
+	background-color: black;
+	opacity: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#app{
+	width: 300px;
+	height: auto; 
+	background-color: gray;
+	text-align: center;
+	padding: 5px;
+}
+
+.newElement{
+	width: 130px;
+	height: 40px;
+	border-radius: 10px;
+	margin: 0;
+	background-color: #0c0;
+
+}
+.deleteElement{
+	width: 130px;
+	height: 40px;
+	border-radius: 10px;
+	margin: 0;
+	background-color: #f00; 
+}
+.elemento{
+	margin: 5px;
+	padding: auto;
+}
+.subElemento{
+	height: 30px;
+	width: 200px;
+	background-color:  white;
+	list-style: none;
+	text-align: left;
+	font-size: 25px;
+	margin: 5px;
+}
+
+
+
+/*-----------------CREACION DE MODAL--------------*/
+#modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.9);
+ 
+
+      }
+	  #mdcontent{
+	  	width: 350px;
+	  	height: 350px;
+	  	background-color: white;
+	  	display: flex;
+	  	justify-content: center;
+	  	flex-direction: column;
+	  	align-items: center;
+	  	margin: auto;
+	  }
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .clsInputText
+		{
+			background-color: white;
+			color: black;
+			width: 300px;
+			height: 50px;
+			flex-direction: row;
+			margin: 10px;
+		}
+
