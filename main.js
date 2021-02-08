@@ -47,20 +47,20 @@ buttonAddTask.innerText =" + ";
 contentTask.appendChild(buttonAddTask);
 buttonAddTask.classList.add('buttonAddTask');
 
-
 var containerNoteTask =document.createElement("div");
 itemTask.appendChild( containerNoteTask);
 
 var containerAddTask =document.createElement("div");
 containerNoteTask.appendChild(containerAddTask);
+containerAddTask.classList.add('tarea');
 
-var app = document.getElementById("app");
-app.classList.add('row', 'row-cols-1', 'row-cols-md-1', 'row-cols-lg-2', 'containerApp');
-app.appendChild(containerList);
-app.appendChild(containerTask);
+var containerApp = document.getElementById("app");
+containerApp.classList.add('row', 'row-cols-1', 'row-cols-md-1', 'row-cols-lg-2', 'containerApp');
+containerApp.appendChild(containerList);
+containerApp.appendChild(containerTask);
 
 
-//funciones Task
+//Funciones Task
 
 document.body.onload = newTask();
 
@@ -97,12 +97,10 @@ function newTask () {
     buttonDoneTask.classList.add('buttonDoneTask');
     containerBtnAddTask.appendChild(buttonDoneTask);
     
-
    // agregamos estos elementos al div cabecera 
    containerMainTask.appendChild(inputAddTask);
    containerMainTask.appendChild(buttonDoneTask);
 
-    
     // creamos la lista donde se mostraran los elemntos ingresados    
     var listTask = document.createElement('ul');
     
@@ -116,37 +114,36 @@ function newTask () {
         if (inputAddTask.value.length > 0){
             
             // creamos el elemento de lista
-            var nElementoTask = createElementTask(inputAddTask.value)
+            var nItemTask = createElementTask(inputAddTask.value)
+            nItemTask.classList.add('nItemTask');
             
             // insertamos por el frente a la lista
-            listTask.insertBefore(nElementoTask,listTask.firstChild)
+            listTask.insertBefore(nItemTask,listTask.firstChild)
             
             //limpiamos el valor del input
             inputAddTask.value = "";
 
+
             // asignamos un evento al checkbox para marcar el texto
-            nElementoTask.firstChild.addEventListener('change', function() 
+            nItemTask.firstChild.addEventListener('change', function() 
             {            
-                if( this.checked)
+                if(nItemTask.checked)
                 {
-                    nElementoTask.style = 'text-decoration: line-through; list-style:none';
+                    nItemTask.style = 'text-decoration: line-through; list-style:none';
                 }
                 else
                 {
-                    nElementoTask.style = 'text-decoration: none; list-style:none';
+                    nItemTask.style = 'text-decoration: none; list-style:none';
                 }
             });
 
             // asignamos un evento al boton eliminar
-            nElementoTask.lastChild.addEventListener('click', function() 
+            nItemTask.lastChild.addEventListener('click', function() 
             {            
-                listTask.removeChild(nElementoTask);
+                listTask.removeChild(nItemTask);
             });
-            
-
         }
-      });
-
+    });
 }
 
 function createElementTask(val){
