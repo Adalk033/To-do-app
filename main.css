@@ -1,5 +1,5 @@
 .containerApp{
-    background-color: lightyellow;
+    background-color:lightyellow;
     margin: 30px;
     padding: 15px;
 }
@@ -12,7 +12,7 @@
 .itemList{
     color:white;
     text-align: center;
-    background-color: lightcoral;
+    background-color:  rgb(134, 197, 218);
 }
 
 .itemTask{
@@ -21,22 +21,30 @@
 }
 
 .contentTask {
-    background-color:  rgb(132, 149, 199); 
+    background-color: rgb(114, 128, 170); 
+}
+
+.containerNoteList{
+    background-color:  rgb(144, 212, 235);
 }
 
 button{
     color: white;
     font-family: cursive;
     text-align: center; 
-    padding: 10px;
+    padding: 5px;
     border: 0;
     border-radius: 5px;
 }
 
 .buttonAddList{
-    background-color: rgb(240, 110, 110);
+    background-color: rgb(134, 197, 218);
 }
 
-.buttonAddTask{
-    background-color: rgb(114, 131, 182);
+.buttonDeleteTask, .buttonDoneTask, .buttonAddTask{
+    background-color: rgb(114, 128, 170);
+}
+
+.containerAddTask{
+    background-color: rgb(132, 149, 199); 
 }
