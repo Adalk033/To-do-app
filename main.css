@@ -1,0 +1,42 @@
+.containerApp{
+    background-color: lightyellow;
+    margin: 30px;
+    padding: 15px;
+}
+
+.containerApp > *{
+    text-align: center;
+    padding: 15px;
+}
+
+.itemList{
+    color:white;
+    text-align: center;
+    background-color: lightcoral;
+}
+
+.itemTask{
+    color:white;
+    text-align: center;
+}
+
+.contentTask {
+    background-color:  rgb(132, 149, 199); 
+}
+
+button{
+    color: white;
+    font-family: cursive;
+    text-align: center; 
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.buttonAddList{
+    background-color: rgb(240, 110, 110);
+}
+
+.buttonAddTask{
+    background-color: rgb(114, 131, 182);
+}
