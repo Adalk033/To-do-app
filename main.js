@@ -66,44 +66,6 @@ function addcross()
 
 }
 
-function checarTexto()
-    {
-        //arreglo para las etiquetas
-        
-        index = 0;
-        
-        etiquetas = [];
-        
-        var estilo = document.body.getElementsByClassName('crossText')[index];
-
-        //sirve para encontrar las etiquetas en la pagina
-        while( estilo != undefined )
-        {
-            estilo = document.body.getElementsByClassName('crossText')[index];
-
-            etiquetas.push(estilo)
-
-            index++;   
-
-            estilo = document.body.getElementsByClassName('crossText')[index];
-        }
-
-        //Este for le agrega a cada etiqueta un lsineer por si son marcado para tachar el texto o no
-        for(var two = 0; two < etiquetas.length; two++)
-        {
-            etiquetas[two].addEventListener('change', function() 
-                {            
-                    if( this.style.textDecoration === 'none' )
-                    {
-                        this.style = 'text-decoration: line-through';
-                    }
-                    else
-                    {
-                        this.style = 'text-decoration: none';
-                    }
-                } );
-        }
-    }
 
 //Funciones Task
 
@@ -168,7 +130,17 @@ function newTask () {
             //limpiamos el valor del input
             inputAddTask.value = "";
 
-            checarTexto();
+            nItemTask.firstChild.firstChild.addEventListener('change', function() 
+            {            
+                if( this.checked)
+                {
+                    nItemTask.firstChild.style.textDecoration = "line-through";
+                }
+                else
+                {
+                    nItemTask.firstChild.style.textDecoration = "none";
+                }
+            });
 
             // asignamos un evento al boton eliminar
             nItemTask.lastChild.addEventListener('click', function() 
